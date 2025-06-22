@@ -14,7 +14,7 @@ putNL:
 
 print:
 	 mov ah, 0x0e
-.repat:
+.repeat:
 	lodsb
 	cmp AL, 0
 	je .done
