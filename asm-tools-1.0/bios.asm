@@ -23,4 +23,8 @@ print:
 .done:
 	ret
 
+writeln:
+	call print
+	call putNL
+	ret
 
