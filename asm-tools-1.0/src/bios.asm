@@ -27,3 +27,17 @@ writeln:
 	call print
 	call putNL
 	ret
+
+pressANYmsg:
+	mov si, PRESS_ANY_KEY
+	call writeln
+	mov ah, 0x00
+	int 0x16
+	ret
+
+pressANY:
+	mov ah, 0x00
+	int 0x16
+	ret
+
+PRESS_ANY_KEY db "Press any key to continue...", 0
