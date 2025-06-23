@@ -43,7 +43,7 @@ pressANY:
 printTD:
 	push ax
 	mov ah, 0
-	mov bl, 0
+	mov bl, 10
 	div bl
 	add al, '0'
 	call putChar
@@ -56,15 +56,15 @@ printTD:
 time:
 	mov ah, 0x2c
 	int 0x21
-	mov si, ch
+	mov al, ch
 	call printTD
 	mov al, '-'
 	putChar
-	mov si, cl
+	mov al, cl
 	call printTD
 	mov al, '-'
 	call putChar
-	mov si, dh
+	mov al, dh
 	call printTD
 	call putNL
 	ret
