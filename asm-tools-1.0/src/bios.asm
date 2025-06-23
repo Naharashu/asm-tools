@@ -40,4 +40,18 @@ pressANY:
 	int 0x16
 	ret
 
+time:
+	mov ah, 0x2c
+	int 0x21
+	mov si, ch
+	call print
+	move al, '-'
+	putChar
+	move si, cl
+	call print
+	move al, '-'
+	move si, dh
+	call writeln
+	ret
+
 PRESS_ANY_KEY db "Press any key to continue...", 0
